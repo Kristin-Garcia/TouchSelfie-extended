@@ -1,0 +1,15 @@
+We had a variety of issues with connecting our Wifi to the university network. Try the following:
+1. Connect to Your Raspberry Pi: Sign in remotely to your Raspberry Pi, or as a Raspberry Pi Desktop, or Headless
+2. Open Command Terminal and enter: sudo nano /etc/wpa supplicant/wap_supplicant.conf
+3. Review wpa_supplicant.conf for Network information. Review networks that shouldn't be there. This is where you can input your username (identity) and password.
+4. Additional items and how we typed it out:
+  network={
+        ssid="WIFI@OU"
+        key_mgmt=WPA-EAP
+        eap=PEAP
+        identity="xxxxxx"
+        password="xxxxxx"
+        phase1="peaplabel=0"
+        phase2="auth=MSCHAPV2"
+5. When finished hit CTRL-X, then Y, then Enter to save the updated wpa_supplicant.conf file
+6. Restart your Raspberry Pi
